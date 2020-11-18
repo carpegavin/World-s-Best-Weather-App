@@ -43,31 +43,37 @@ $.ajax({
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=austin&appid=105fb5cfa2c589eefd6b17a6b1f5f6c0&units=imperial";
       
     
-// ----------AJAX call to the OpenWeatherMap API------------
-     $.ajax({
-          url: queryURL,
-          method: "GET"
-        }).then(function(response) {
+
 
 //-----------------ON CLICK----------------------------------------
     $("#searchTerm").on("click", function(event) {
      event.preventDefault();
-    clear()
+     var queryURL = buildQueryURL();
+     $(this).prevAll("input[type=text]").val()
 
-//----------------?????????????----------------------------------------   
-    var queryURL = buildQueryURL();
+    })
+// ----------AJAX call to the OpenWeatherMap API------------
     $.ajax({
-      url:queryURL,
-      method:"GET"
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+    
+    
+//----------------?????????????----------------------------------------   
+    // var queryURL = buildQueryURL();
+    // $.ajax({
+    //   url:queryURL,
+    //   method:"GET"
             
-    }).then(updatePage);
+    // }).then(updatePage);
+
 
 // --------------Log the queryURL---------------------------
       console.log(queryURL);
 
 //------------Log the resulting object-----------------------
       console.log(response);
-
+    
 // ------------Transfer content to HTML---------------------
       $(".city").html("<h1>" + response.name + " Weather Details</h1>");
       $(".wind").text("Wind Speed: " + response.wind.speed);
@@ -91,8 +97,8 @@ $.ajax({
       console.log("Temperature (F): " + tempF);
       
     });
-  
- });
+
+ 
     
 
 
