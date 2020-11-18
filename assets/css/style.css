@@ -1,6 +1,18 @@
-body {
+/* body {
     background-color:rgb(245, 245, 137);
+} */
+
+
 }
+.card {
+    word-break: break-all;
+    margin-left:10%;
+  }
+
+  .articleHeadline {
+    line-height: 1.5;
+  }
+
 
 .jumbotron {
     font-size: 60px;
@@ -8,9 +20,61 @@ body {
     width: 100%;
     color: white; background-color:green;
     border-radius:10px;
-    padding: 0.2em 0.3em;
-    
-    
-    
-    
+    padding: 0.2rem 0.3rem;
 }
+
+#searchbar {
+    background-color:rgb(241, 241, 236);
+    width:60px;
+    border: solid 2px black;
+}
+
+#forecast {
+    background-color:rgb(154, 154, 207);
+}
+
+.data {
+    margin-left: 20vw;
+}
+
+
+
+#search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  button {
+    float: right;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+
+
+@media screen and (min-width: 480px) {
+    body {
+      background-color: lightgreen;
+    }
+  }

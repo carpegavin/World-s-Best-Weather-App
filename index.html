@@ -27,10 +27,76 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="container">
-        <div class="jumbotron">Weather Dashboard</div>
+  <header class="container">
+    <div class="jumbotron">
+      <h1 class="dashboard">
+        <strong>
+            <i class="fa fa-newspaper-o"></i>Weather Dashboard
+        </strong>
+      </h1>
+    </div>
+  </header>
+
+<form role="form">
+  
+<!-- <div class="data">
+    <h2 class="box">Current Weather in <span id="location"></span></h2>
+    <h2 class="box">Temperature: <span id="temperature"></span> degrees</h2>
+    <h2 class="box">Humidity: <span id="humidity"></span> %</h2>
+    <h2 class="box">Wind: <span id="wind"></span> mph</h2>
+    <h2 class="box">UV: <span id="uv"></span></h2>
+    <h2 class="box">Sky Condition: <span id="sky"></span></h2>
+
+</div> -->
+    
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-4" id="search">
+          <input type="text" id="searchbar" placeholder="City Search" name="search">
+        <button id="searchTerm" type="submit"><i class="fa fa-search"></i></button>
+      </div>
+
+      <br>
+      <div class="col">
+        <div class="city" id="weather">city</div>
+            <div class="temp">temp</div>
+            <div class="humidity">humidity</div>
+            <div class="wind">wind</div>
+            <div class="uvIndex">uv</div>
+      </div>
+    </div>
+    <div class="row" id="forecast">
+      <div class="col">
+        Day 1
+      </div>
+      <div class="col">
+        Day 2
+      </div>
+      <div class="col">
+        Day 3
+      </div>
+      <div class="col">
+        Day 4
+      </div>
+      <div class="col">
+        Day 5
+      </div>
+    </div>
+  </div>
 
 
 
@@ -40,6 +106,10 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+
     <script type="text/javascript" src="./assets/js/script.js"></script>
   
 
