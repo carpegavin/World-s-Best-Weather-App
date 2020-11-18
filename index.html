@@ -66,33 +66,38 @@
     <div class="container">
       <div class="row">
         <div class="col-4" id="search">
-          <input type="text" id="searchbar" placeholder="City Search" name="search">
+          <input type="text" id="searchBar" placeholder="City Search" name="search">
         <button id="searchTerm" type="submit"><i class="fa fa-search"></i></button>
       </div>
-
       <br>
+      
+      
       <div class="col">
-        <div class="city" id="weather">city</div>
-            <div class="temp">temp</div>
-            <div class="humidity">humidity</div>
-            <div class="wind">wind</div>
-            <div class="uvIndex">uv</div>
+       <div class="card">
+        <div class="city" id="weather"></div>
+        <div class="tempF"></div>
+        <div class="humidity"></div>
+        <div class="wind"></div>
+        <div class="uvIndex"></div>
       </div>
-    </div>
+        </div>
+          </div>
+    <span id="fiveDay">5-Day Forecast</span>    
     <div class="row" id="forecast">
-      <div class="col">
+        
+      <div class="col" id="day1">
         Day 1
       </div>
-      <div class="col">
+      <div class="col" id="day2">
         Day 2
       </div>
-      <div class="col">
+      <div class="col" id="day3">
         Day 3
       </div>
-      <div class="col">
+      <div class="col" id="day4">
         Day 4
       </div>
-      <div class="col">
+      <div class="col" id="day5">
         Day 5
       </div>
     </div>

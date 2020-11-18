@@ -31,6 +31,7 @@
 
 #forecast {
     background-color:rgb(154, 154, 207);
+    padding:100px;
 }
 
 .data {
@@ -71,7 +72,16 @@
   }
 
 
+.card {
+    background-color: rgb(230, 213, 213);
+    width: 400px;
+    border: solid black 1px;
+    padding: 10px;
+}
 
+#fiveDay {
+    font-size: 30px;
+}
 
 @media screen and (min-width: 480px) {
     body {
