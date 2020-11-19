@@ -38,12 +38,14 @@ var apiURL =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${a
 
 
 // ------------Transfer content to HTML---------------------
-     var img1 = `https://openweathermap.org/img/w/10d.png`;  
-      $(".city").html("<h1>" + response.name + " </h1>");
+     var img1 = `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
+      
+     $(".city").html("<h1>" + response.name + " </h1>");
       $(".img1").attr("src", img1);
       $(".wind").text("Wind Speed: " + response.wind.speed);
       $(".humidity").text("Humidity: " + response.main.humidity);
       $(".tempF").text("Temperature: " + response.main.temperature);
+    //   $(".uvIndex").text("UV Index: " + response.daily.uvi);
     
 // -------------Convert the temp to fahrenheit---------------
       var tempF = (response.main.temp);
@@ -132,7 +134,7 @@ var imageOne = `https://openweathermap.org/img/wn/${response.list[32].weather[0]
 
 //---------------------------LAT/LONG pull--------------------------------------------
 
-var apiURLUvLat =`https://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
+var apiURLUvLat =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
 
 
 $.ajax({
@@ -152,7 +154,7 @@ url: apiURLUv,
 method: "GET"
 }).then(function(response){
 
-$(".uvIndex").text("UVI: " + response.list[39].main.temp);
+$(".uvIndex").text("UVI: " + response.daily.uvi);
 
 
 

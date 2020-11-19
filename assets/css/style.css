@@ -84,6 +84,7 @@
     padding: 10px;
     margin-left: 25%;
     margin-top: 2%;
+    text-align: center;
 }
 
 #fiveDay {
@@ -96,14 +97,25 @@
 }
 
 #currentDay {
-    background-color: yellow;
+    background-color: rgb(240, 240, 164);
     font-size: 2em;
     padding: 10px;
     border-radius:10px;
     border: solid black 1px;
+    
+    padding-right: 20px;
+}
+
+.img1 {
+    width: 7em;
+    height: 7em;
+    margin-left:35%;
 }
 
 
+.col {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 @media screen and (min-width: 480px) {
     body {
