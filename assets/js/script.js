@@ -113,22 +113,38 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[32].weather[0].
 
 
 //-------------UV pull--------------------------------------------
-// var city = $("#searchBar").val();
-// var apiKey = '105fb5cfa2c589eefd6b17a6b1f5f6c0';
-// var units = '&units=imperial';
-// var apiURL3 =`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}${units}`;
+
+// var apiURLUvLat =`http://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
 
 
 // $.ajax({
-// url: apiURL3,
+// url: apiURLUvLat,
 // method: "GET"
-// }).then(function(response.list) {
+// }).then(function(response) {
 
-//     $(".city").html("<h1>" + response.name + " Weather</h1>");
+// console.log(response);
+
+// var apiURLUv = `http://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
+
+// $.ajax({
+//     url: apiURLUv,
+//     method: "GET"
+// }).then(function(response){
+
+//     $(".uvIndex").text("temperature: " + response.list[39].main.temp);
+
+// }
+
+
+
+
 
 })
 })
 })
+
+
+
 
 
 
