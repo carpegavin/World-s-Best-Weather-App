@@ -3,7 +3,7 @@
 } */
 
 
-}
+
 .card {
     word-break: break-all;
     margin-left:10%;
@@ -31,7 +31,8 @@
 
 #forecast {
     background-color:rgb(225, 225, 241);
-    padding:100px;
+    padding:50px;
+    margin-top:3%;
 }
 
 .data {
@@ -74,13 +75,17 @@
 
 .card {
     background-color: rgb(230, 213, 213);
-    width: 400px;
+    width: 500px;
     border: solid black 1px;
     padding: 10px;
 }
 
 #fiveDay {
     font-size: 30px;
+    padding: 50px;
+    margin-left:30%;
+    margin-top:5%;  /* -------why won't this work?*/
+    
 }
 
 @media screen and (min-width: 480px) {
