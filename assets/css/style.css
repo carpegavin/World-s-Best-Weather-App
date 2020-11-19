@@ -7,6 +7,7 @@
 .card {
     word-break: break-all;
     margin-left:10%;
+    border-radius:10px;
   }
 
   .articleHeadline {
@@ -31,8 +32,11 @@
 
 #forecast {
     background-color:rgb(225, 225, 241);
-    padding:50px;
+    padding:40px;
     margin-top:3%;
+    border: solid black 1px;
+    border-radius:10px;
+
 }
 
 .data {
@@ -75,18 +79,31 @@
 
 .card {
     background-color: rgb(230, 213, 213);
-    width: 500px;
+    width: 400px;
     border: solid black 1px;
     padding: 10px;
+    margin-left: 25%;
+    margin-top: 2%;
 }
 
 #fiveDay {
-    font-size: 30px;
-    padding: 50px;
-    margin-left:30%;
-    margin-top:5%;  /* -------why won't this work?*/
+    font-size: 35px;
+    padding-top: 20px;
+    display: relative;
+    float: top;
+    height: 2em;
     
 }
+
+#currentDay {
+    background-color: yellow;
+    font-size: 2em;
+    padding: 10px;
+    border-radius:10px;
+    border: solid black 1px;
+}
+
+
 
 @media screen and (min-width: 480px) {
     body {

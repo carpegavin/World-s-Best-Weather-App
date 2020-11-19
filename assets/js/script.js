@@ -1,17 +1,31 @@
 
+let currentDay = null, date = null;
+
+let update = function () {
+date = moment(new Date())
+currentDay.html(date.format('LLLL'));
+};
+
+$(document).ready(function(){
+currentDay = $('#currentDay')
+update();
+setInterval(update, 1000);
+});
+
+
 //--------------onclick sumbit city ------------------------
 $("#submit").click(function (event) {
     event.preventDefault();
 
-
 console.log("test");
 
+//-------------------VARIABLES--------------------------------------
 var city = $("#searchBar").val();
 var apiKey = "105fb5cfa2c589eefd6b17a6b1f5f6c0";
 var units = "&units=imperial";
 var apiURL =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
 
-// ----------AJAX call to the OpenWeatherMap API------------
+// --------------AJAX call to get DAY 1 ---------------------
     $.ajax({
         url: apiURL,
         method: "GET"
@@ -22,15 +36,15 @@ var apiURL =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ap
 //------------Log the resulting object-----------------------
       console.log(response);
 
+
 // ------------Transfer content to HTML---------------------
-      $(".city").html("<h1>" + response.name + " Weather</h1>");
+     var img1 = `http://openweathermap.org/img/w/10d.png`;  
+      $(".city").html("<h1>" + response.name + " </h1>");
+      $(".img1").attr("src", img1);
       $(".wind").text("Wind Speed: " + response.wind.speed);
       $(".humidity").text("Humidity: " + response.main.humidity);
-      $(".tempF").text("temperature: " + response.main.temperature);
-    //$(".uvIndex").text("        : " +                  );
+      $(".tempF").text("Temperature: " + response.main.temperature);
     
-    //$("#forecast").text("       : " +                  );
-      
 // -------------Convert the temp to fahrenheit---------------
       var tempF = (response.main.temp);
 
@@ -42,8 +56,12 @@ var apiURL =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ap
       console.log("Wind Speed: " + response.wind.speed);
       console.log("Humidity: " + response.main.humidity);
       console.log("Temperature (F): " + tempF);
-      
-//--------------forecast pull--------------------------------------
+//--------------------------------------------------------------------------------    
+
+
+
+
+//----------------------- 5-DAY forecast pull--------------------------------------
 
 var city = $("#searchBar").val();
 var apiKey = "105fb5cfa2c589eefd6b17a6b1f5f6c0";
@@ -61,11 +79,11 @@ method: "GET"
     var imageOne = `http://openweathermap.org/img/wn/${response.list[8].weather[0].icon}@2x.png`;
     
     console.log(response);
-    
+    // $(".date2").text("Date: " + list.dt.txt);
     $(".img2").attr("src", imageOne);
     $(".wind2").text("Wind Speed: " + response.list[8].wind.speed);
     $(".hum2").text("Humidity: " + response.list[8].main.humidity);
-    $(".temp2").text("temperature: " + response.list[8].main.temp);
+    $(".temp2").text("Temperature: " + response.list[8].main.temp);
 
 //-----------------day 3   -------------------------------------
 
@@ -76,7 +94,7 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[16].weather[0].
     $(".img3").attr("src", imageOne);
     $(".wind3").text("Wind Speed: " + response.list[16].wind.speed);
     $(".hum3").text("Humidity: " + response.list[16].main.humidity);
-    $(".temp3").text("temperature: " + response.list[16].main.temp);
+    $(".temp3").text("Temperature: " + response.list[16].main.temp);
 
 //------------------day 4 ---------------------------------------------
 
@@ -87,7 +105,7 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[24].weather[0].
     $(".img4").attr("src", imageOne);
     $(".wind4").text("Wind Speed: " + response.list[24].wind.speed);
     $(".hum4").text("Humidity: " + response.list[24].main.humidity);
-    $(".temp4").text("temperature: " + response.list[24].main.temp);
+    $(".temp4").text("Temperature: " + response.list[24].main.temp);
 
 //----------------------day 5 -----------------------------------------
 
@@ -98,7 +116,7 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[32].weather[0].
     $(".img5").attr("src", imageOne);
     $(".wind5").text("Wind Speed: " + response.list[32].wind.speed);
     $(".hum5").text("Humidity: " + response.list[32].main.humidity);
-    $(".temp5").text("temperature: " + response.list[32].main.temp);
+    $(".temp5").text("Temperature: " + response.list[32].main.temp);
 
  // ----------------------day 6 --------------------------------------
  
@@ -109,40 +127,40 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[32].weather[0].
     $(".img6").attr("src", imageOne);
     $(".wind6").text("Wind Speed: " + response.list[39].wind.speed);
     $(".hum6").text("Humidity: " + response.list[39].main.humidity);
-    $(".temp6").text("temperature: " + response.list[39].main.temp);
+    $(".temp6").text("Temperature: " + response.list[39].main.temp);
 
 
-//-------------UV pull--------------------------------------------
+//---------------------------LAT/LONG pull--------------------------------------------
 
-// var apiURLUvLat =`http://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
-
-
-// $.ajax({
-// url: apiURLUvLat,
-// method: "GET"
-// }).then(function(response) {
-
-// console.log(response);
-
-// var apiURLUv = `http://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
-
-// $.ajax({
-//     url: apiURLUv,
-//     method: "GET"
-// }).then(function(response){
-
-//     $(".uvIndex").text("temperature: " + response.list[39].main.temp);
-
-// }
+var apiURLUvLat =`http://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
 
 
+$.ajax({
+url: apiURLUvLat,
+method: "GET"
+}).then(function(response) {
+
+console.log(response);
+
+
+
+//----------------------------UVI pull----------------------------------------------
+var apiURLUv = `http://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
+
+$.ajax({
+url: apiURLUv,
+method: "GET"
+}).then(function(response){
+
+$(".uvIndex").text("UVI: " + response.list[39].main.temp);
 
 
 
 })
 })
 })
-
+})
+})
 
 
 

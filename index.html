@@ -39,55 +39,35 @@
 
 <form role="form">
   
-<!-- <div class="data">
-    <h2 class="box">Current Weather in <span id="location"></span></h2>
-    <h2 class="box">Temperature: <span id="temperature"></span> degrees</h2>
-    <h2 class="box">Humidity: <span id="humidity"></span> %</h2>
-    <h2 class="box">Wind: <span id="wind"></span> mph</h2>
-    <h2 class="box">UV: <span id="uv"></span></h2>
-    <h2 class="box">Sky Condition: <span id="sky"></span></h2>
 
-</div> -->
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container">
+  <div class="container">
       <div class="row">
         <div class="col-4" id="search">
           <input type="text" id="searchBar" placeholder="City Search" name="search">
         <button id="submit" type="submit"><i class="fa fa-search"></i></button>
       </div>
       <br>
-      
+      <div>
+          <p id="currentDay"></p>
+      </div>
       
       <div class="col">
        <div class="card">
-        <div class="city" id="weather"></div>
-        <div class="tempF"></div>
-        <div class="humidity"></div>
-        <div class="wind"></div>
-        <div class="uvIndex"></div>
+       <div class="city" id="weather"></div>
+       <img class="img1"></img>
+       <div class="tempF"></div>
+       <div class="humidity"></div>
+       <div class="wind"></div>
+       <div class="uvIndex"></div>
       </div>
         </div>
           </div>
     
-    <span id="fiveDay">5-Day Forecast</span>    
-    
-    <div class="row" id="forecast">
       
+<div class="row" id="forecast">
+    <span id="fiveDay">5-Day Forecast</span>  
       <div class="col" id="day2">
+        <div class="date2"></div>
         <img class="img2"></img>
         <div class="wind2"></div>
         <div class="hum2"></div>
@@ -122,8 +102,7 @@
         <div class="hum6"></div>
         <div class="temp6"></div>
       </div>
-    </div>
-  </div>
+</div>
 
 
 
