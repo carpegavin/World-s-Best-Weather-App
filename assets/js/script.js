@@ -23,7 +23,7 @@ console.log("test");
 var city = $("#searchBar").val();
 var apiKey = "105fb5cfa2c589eefd6b17a6b1f5f6c0";
 var units = "&units=imperial";
-var apiURL =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
+var apiURL =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
 
 // --------------AJAX call to get DAY 1 ---------------------
     $.ajax({
@@ -38,7 +38,7 @@ var apiURL =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ap
 
 
 // ------------Transfer content to HTML---------------------
-     var img1 = `http://openweathermap.org/img/w/10d.png`;  
+     var img1 = `https://openweathermap.org/img/w/10d.png`;  
       $(".city").html("<h1>" + response.name + " </h1>");
       $(".img1").attr("src", img1);
       $(".wind").text("Wind Speed: " + response.wind.speed);
@@ -66,7 +66,7 @@ var apiURL =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ap
 var city = $("#searchBar").val();
 var apiKey = "105fb5cfa2c589eefd6b17a6b1f5f6c0";
 var units = "&units=imperial";
-var apiURL2 =`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}${units}`;
+var apiURL2 =`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}${units}`;
 
 
 $.ajax({
@@ -76,7 +76,7 @@ method: "GET"
 
 //-----------------day 2 --------------------------------------------
 
-    var imageOne = `http://openweathermap.org/img/wn/${response.list[8].weather[0].icon}@2x.png`;
+    var imageOne = `https://openweathermap.org/img/wn/${response.list[8].weather[0].icon}@2x.png`;
     
     console.log(response);
     // $(".date2").text("Date: " + list.dt.txt);
@@ -87,7 +87,7 @@ method: "GET"
 
 //-----------------day 3   -------------------------------------
 
-var imageOne = `http://openweathermap.org/img/wn/${response.list[16].weather[0].icon}@2x.png`;
+var imageOne = `https://openweathermap.org/img/wn/${response.list[16].weather[0].icon}@2x.png`;
     
     console.log(response);
     
@@ -98,7 +98,7 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[16].weather[0].
 
 //------------------day 4 ---------------------------------------------
 
-var imageOne = `http://openweathermap.org/img/wn/${response.list[24].weather[0].icon}@2x.png`;
+var imageOne = `https://openweathermap.org/img/wn/${response.list[24].weather[0].icon}@2x.png`;
     
     console.log(response);
     
@@ -109,7 +109,7 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[24].weather[0].
 
 //----------------------day 5 -----------------------------------------
 
-var imageOne = `http://openweathermap.org/img/wn/${response.list[32].weather[0].icon}@2x.png`;
+var imageOne = `https://openweathermap.org/img/wn/${response.list[32].weather[0].icon}@2x.png`;
     
     console.log(response);
     
@@ -120,7 +120,7 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[32].weather[0].
 
  // ----------------------day 6 --------------------------------------
  
- var imageOne = `http://openweathermap.org/img/wn/${response.list[39].weather[0].icon}@2x.png`;
+ var imageOne = `https://openweathermap.org/img/wn/${response.list[39].weather[0].icon}@2x.png`;
     
     console.log(response);
     
@@ -132,7 +132,7 @@ var imageOne = `http://openweathermap.org/img/wn/${response.list[32].weather[0].
 
 //---------------------------LAT/LONG pull--------------------------------------------
 
-var apiURLUvLat =`http://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
+var apiURLUvLat =`https://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
 
 
 $.ajax({
@@ -145,7 +145,7 @@ console.log(response);
 
 
 //----------------------------UVI pull----------------------------------------------
-var apiURLUv = `http://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
+var apiURLUv = `https://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
 
 $.ajax({
 url: apiURLUv,
