@@ -37,15 +37,15 @@ var apiURL =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${a
       console.log(response);
 
 
-// ------------Transfer content to HTML---------------------
+//------------Transfer content to HTML---------------------
      var img1 = `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
       
-     $(".city").html("<h1>" + response.name + " </h1>");
+      $(".city").html("<h1>" + response.name + " </h1>");
       $(".img1").attr("src", img1);
       $(".wind").text("Wind Speed: " + response.wind.speed);
       $(".humidity").text("Humidity: " + response.main.humidity);
       $(".tempF").text("Temperature: " + response.main.temperature);
-    //   $(".uvIndex").text("UV Index: " + response.daily.uvi);
+    
     
 // -------------Convert the temp to fahrenheit---------------
       var tempF = (response.main.temp);
@@ -58,8 +58,26 @@ var apiURL =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${a
       console.log("Wind Speed: " + response.wind.speed);
       console.log("Humidity: " + response.main.humidity);
       console.log("Temperature (F): " + tempF);
-//--------------------------------------------------------------------------------    
 
+//-------------------------UV LAT/LON--------------------------------------- 
+
+var city = $("#searchBar").val();
+var apiKey = "105fb5cfa2c589eefd6b17a6b1f5f6c0";
+var units = "&units=imperial";
+var apiURL =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
+
+var apiLatLon = `https://api.openweathermap.org/data/2.5/uvi?lat=${response.coord.lat}&lon=${response.coord.lon}&appid=105fb5cfa2c589eefd6b17a6b1f5f6c0${units}`;
+
+$.ajax({
+    url: apiLatLon,
+    method: "GET"
+  }).then(function(response) {
+  $(".uvIndex").text("UV Index: " + response.value);
+
+});
+
+console.log(response.coord.lat);
+console.log(response.coord.lon);
 
 
 
@@ -131,38 +149,43 @@ var imageOne = `https://openweathermap.org/img/wn/${response.list[32].weather[0]
     $(".hum6").text("Humidity: " + response.list[39].main.humidity);
     $(".temp6").text("Temperature: " + response.list[39].main.temp);
 
+//------------------STORE USER DATA--------------------------------
 
-//---------------------------LAT/LONG pull--------------------------------------------
+//------------------------------------------------
+// $('#submit').on('click', function(){
 
-var apiURLUvLat =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`;
+//     $('input[type="text"]').each(function(){    
+//         var id = $(this).attr('id');
+//         var value = $(this).val();
+//        localStorage.setItem(id, value);
 
+//     });   
+// });
 
-$.ajax({
-url: apiURLUvLat,
-method: "GET"
-}).then(function(response) {
-
-console.log(response);
-
-
-
-//----------------------------UVI pull----------------------------------------------
-var apiURLUv = `https://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}${units}`;
-
-$.ajax({
-url: apiURLUv,
-method: "GET"
-}).then(function(response){
-
-$(".uvIndex").text("UVI: " + response.daily.uvi);
+//---------------------------------------------------
+function saveLocally() {
+    let data = $("#searchBar").val();
+    localStorage.setItem("city", data);
+}
+$("#submit").click(saveLocally);
 
 
+
+
+//-----------------------------------------------------
+
+// $('#submit').click(function(){
+//     var post_vars = $('#searchBar').serializeArray();
+//     localStorage.setItem(id, post_vars);
+//  });
+ 
+//-----------------------------------------------------
 
 })
 })
 })
-})
-})
+// })
+// })
 
 
 
