@@ -1,6 +1,8 @@
 
 let currentDay = null, date = null;
 
+
+//-----------SETS CURRENT DATE AND TIME -----------------------------
 let update = function () {
 date = moment(new Date())
 currentDay.html(date.format('LLLL'));
@@ -59,7 +61,7 @@ $("#submit").click(function (event) {
       console.log("Humidity: " + response.main.humidity);
       console.log("Temperature (F): " + tempF);
 
-//-------------------------UV LAT/LON--------------------------------------- 
+//-------------------------UV LAT/LONG--------------------------------------- 
 
 var city = $("#searchBar").val();
 var apiKey = "105fb5cfa2c589eefd6b17a6b1f5f6c0";
@@ -75,11 +77,11 @@ $.ajax({
   $(".uvIndex").text("UV Index (DUV): " + response.value);
   
 //----------------DYNAMIC UV COLOR CHANGE----------------------------   
-if (response.value <= 4){
-    $(".uvIndex").css("background-color", "#20c997",)
+if (response.value <= 2){
+    $(".uvIndex").css("background-color", "#28a745")
 }
 
-if (response.value >= 4.1){
+if (response.value >= 2.1){
     $(".uvIndex").css("background-color", "#ffc107")
 }
 
@@ -107,7 +109,7 @@ url: apiURL2,
 method: "GET"
 }).then(function(response) {
 
-//-----------------day 2 --------------------------------------------
+//----------------------------day 2 --------------------------------------------
 
     var imageOne = `https://openweathermap.org/img/wn/${response.list[4].weather[0].icon}@2x.png`;
     
@@ -167,146 +169,74 @@ var imageOne = `https://openweathermap.org/img/wn/${response.list[28].weather[0]
     $(".hum6").text("Humidity: " + response.list[36].main.humidity);
     $(".temp6").text("Temperature: " + response.list[36].main.temp);
 
-//------------------STORE USER DATA--------------------------------
 
-//------------------------------------------------
-// $('#submit').on('click', function(){
-
-//     $('input[type="text"]').each(function(){    
-//         var id = $(this).attr('id');
-//         var value = $(this).val();
-//        localStorage.setItem(id, value);
-
-//     });   
-// });
-
-//---------------------------------------------------
-
-// $("#submit").click(saveLocally);
-
-
-
-
-//-----------------------------------------------------
-
-// $('#submit').click(function(){
-//     var post_vars = $('#searchBar').serializeArray();
-//     localStorage.setItem(id, post_vars);
-//  });
- 
-//-----------------------------------------------------
+//------------------------CLEARS THE SEARCH BAR-----------------------------
 $('#searchBar').val('')
 
+//-----------------------------------------------------------------------------
 })
 })
 })
-// })
-// })
-// if(JSON.parse(localStorage.getItem("cities"))){
-//     var citiesArr = JSON.parse(localStorage.getItem("cities"))
-// }else {
-//     var citiesArr= []
-// }
+
+//-------------------------SET ITEMS TO LOCAL STORAGE--------------------------
+
 var count = 0;
 function saveLocally() {
     let data = $("#searchBar").val();
-    // citiesArr.push(data)
-    localStorage.setItem("city-"+count, data);
-    count++
-    // localStorage.setItem("cities", JSON.stringify(citiesArr));
+
+localStorage.setItem("city-"+count, data);
+count++
 }
 
+var myData = newFunction();
+function newFunction() {
+    return localStorage.getItem('city', data);
+}
+//--------------above is working------------------------------------
 
-
-
-
-// $("searchTerm").click(function(){
-    //     var apiURL = buildApiURL();
-    // }); //-----this is from the click function
-
-
-//--------GET USER INPUT FROM SEARCH BAR-----------------------
-  
-// var queryParams = { "api-key": "105fb5cfa2c589eefd6b17a6b1f5f6c0" };
-// queryParams.q = $("#searchBar")
-// .val()
-// .trim();
-
-// $('#humid').append(`humidity')
-
-// var queryURL = "http://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
+// function submit()
+// {
+// var myData = JSON.parse(localStorage.getItem('searchBar'))||[];
+// var newData =
+// [{
+//     'name': document.getElementById("searchBar").value,
     
-    // $.ajax({
-        //     url: "http://api.openweathermap.org/data/2.5/weather?q=austin&appid=105fb5cfa2c589eefd6b17a6b1f5f6c0&units=imperial" ,
-        //     method: "GET"
-        //   }).then(function(response) {
-        //     console.log(response);
-        //   });
-        
-        //   $.ajax({
-        //     url: "http://api.openweathermap.org/data/2.5/forecast?q=austin&appid=105fb5cfa2c589eefd6b17a6b1f5f6c0&units=imperial",
-        //     method: "GET"
-        //   }).then(function(response) {
-        //     console.log(response);
-        //   });
-        
+// }];
+// myData.push(newData);
+// localStorage.setItem("searchBar", JSON.stringify(myData));
 
-        // $.ajax({
-            //     url: "http://api.openweathermap.org/data/2.5/uvi?appid=105fb5cfa2c589eefd6b17a6b1f5f6c0&lat=30.27&lon=-97.74",
-            //     method: "GET"
-            //   }).then(function(response) {
-            //     console.log(response);
-            //   });
+// var newData1 = JSON.parse(localStorage.getItem("searchBar"));
 
-
-
-
-
-    // var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=austin&appid=105fb5cfa2c589eefd6b17a6b1f5f6c0&units=imperial";
-
-// var Geo={};
-// if(navigator.geolocation) {
-//     window.onload = function() {
-//         var currentPosition;
-//         function getCurrentPosition (position) {        currentPosition = position;
-//         latitude = currentPosition.coords.latitude;
-//         longitude = currentPosition.coords.longitude;
-//     }
 // }
 
-// $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=105fb5cfa2c589eefd6b17a6b1f5f6c0", 
-// function (data) {            
-//     var rawJson = JSON.stringify(data);            
-//     var json = JSON.parse(rawJson);            
-//     updateWeather(json);
-// });}
-
-// navigator.geolocation.getCurrentPosition(getCurrentPosition);
 
 
-// var weather = json.weather[0].description;
-// if(weather.indexOf("rain") >= 0) {
-//     skycons.set("animated-icon", Skycons.RAIN);    
+
+
+
+
+
+// var myData = JSON.parse(localStorage.getItem('#searchBar'))||[];
+// var newData =
+// [{
+//     'city': document.getElementById("searchBar").value,
+    
+// }];
+
+// function submit (){
+// myData.push(newData);
+// localStorage.setItem("#searchBar", JSON.stringify(myData));
+
+// var newData1 = JSON.parse(localStorage.getItem("#searchBar"));
 // }
-// else if (weather.indexOf("sunny") >= 0) {        
-//     skycons.set("animated-icon", Skycons.CLEAR_DAY);    }
 
 
-// $.ajax({
-//     url: url,
-//     success: function (result) {
-//         console.log(result);
-//         console.log("name", result.name);
-//         $("#location").text(result.name);
-//         let F = Math.round(result.main.temp);
-//         let Fahrenheit = F.toString();
-//         $("#temperature").text(Fahrenheit);
-//         // let humidity = Math.round(result.main.humidity);
-//         // let humidity = humidity.toString();
-//         // $("#humidity").text(main.humidity);
-//         let windSpeed = Math.round(result.wind.speed);
-//         let wind = windSpeed.toString();
-//         $("#wind").text(wind);
-//         $("#sky").text(result.weather[0].description);
-//     }
-// 
+
+
+
+// for (i=0; i<=10; i++){
+//     $('#searchBar'+i).val(localStorage.getItem("userTask"+i))
+
+// }
+
+//-----------------------------------------------------------------

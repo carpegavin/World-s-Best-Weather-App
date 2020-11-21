@@ -1,9 +1,9 @@
-/* body {
-    background-color:rgb(245, 245, 137);
-} */
 
 
 
+body{
+    background-color: rgb(139, 139, 108);
+}
 .card {
     word-break: break-all;
     margin-left:10%;
@@ -19,9 +19,10 @@
     font-size: 60px;
     text-align:center;
     width: 100%;
-    color: white; background-color:green;
+    color: white; background-color:rgb(180, 52, 84);
     border-radius:10px;
     padding: 0.2rem 0.3rem;
+    border: solid black 1px;
 }
 
 #searchbar {
@@ -31,7 +32,7 @@
 }
 
 #forecast {
-    background-color:rgb(225, 225, 241);
+    background-color:rgb(138, 138, 248);
     padding:40px;
     margin-top:3%;
     border: solid black 1px;
@@ -78,7 +79,7 @@
 
 
 .card {
-    background-color: rgb(230, 213, 213);
+    background-color: rgb(85, 243, 111);
     width: 400px;
     border: solid black 1px;
     padding: 10px;
@@ -91,11 +92,17 @@
     font-size: 40px;
     padding-top: 20px;
     display: relative;
-    position: relative;
-    float: top;
+    
+    background-color: yellow;
     height: 2em;
-    margin-left: 37%;
+    margin-left: 35%;
     font-weight: bold;
+    border: solid black 2px;
+    width: 8em;
+    padding: 5px;
+    border-radius:10px;
+    padding-left:10px;
+    padding-right:10px;
     
 }
 
@@ -121,14 +128,25 @@
 }
 
 #day2, #day3, #day4, #day5, #day6{
-    border: solid black 1px;
+    border: solid black 2px;
     background-color:rgb(241, 241, 181);
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-left: 0.60rem;
+    margin-right: 0.60rem;
 }
 
-
+#today {
+    background-color: rgb(150, 56, 145);
+    width:200px;
+    border: solid black 1px;
+    border-radius: 10px;
+    margin-left:21%;
+    color: white;
+}
 
 @media screen and (min-width: 480px) {
     body {
-      background-color: lightgreen;
+      background-color: rgb(203, 228, 238);
     }
   }
