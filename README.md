@@ -8,7 +8,7 @@
 - When the user views the the current weather, they see the name,  date, a weather icon, temp, humidity, wind speed, and UV index.
 - When the user views the UV index, they are presented with a dynamic color representing the severity of the UV rays: light, moderate, severe.
 - When the user views the future forecast, they are presented with a five day forecast displaying temp, humidity, and the appropriate weather icon.
-- When the user clicks on a cit in the search history, they are shown all of the above.
+- When the user clicks on a city in the search history, they are shown all of the above.
 - When the user opens the weather app, they are presented with the conditions of the last city that they searched for.
 
 ## To meet the above criteria, I implemented the following:
