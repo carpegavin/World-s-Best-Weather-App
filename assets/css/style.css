@@ -1,19 +1,5 @@
 
-
-
-body{
-    background-color: rgb(139, 139, 108);
-}
-.card {
-    word-break: break-all;
-    margin-left:10%;
-    border-radius:10px;
-  }
-
-  .articleHeadline {
-    line-height: 1.5;
-  }
-
+/* ----------------------the header ------------------------------------ */
 
 .jumbotron {
     font-size: 60px;
@@ -22,30 +8,20 @@ body{
     color: white; background-color:rgb(180, 52, 84);
     border-radius:10px;
     padding: 0.2rem 0.3rem;
-    border: solid black 1px;
+    border: solid black 2px;
 }
 
-#searchbar {
-    background-color:rgb(241, 241, 236);
-    width:60px;
-    border: solid 2px black;
-}
-
-#forecast {
-    background-color:rgb(138, 138, 248);
-    padding:40px;
-    margin-top:3%;
-    border: solid black 1px;
+/* -------------------current date and time---------------------------------- */
+#currentDay {
+    background-color: rgb(240, 240, 164);
+    font-size: 2em;
+    padding: 10px;
     border-radius:10px;
-
+    border: solid black 1px;
+    padding-right: 20px;
 }
 
-.data {
-    margin-left: 20vw;
-}
-
-
-
+/* --------------------------city search bar/user input-------------------------- */
 #search input[type=text] {
     padding: 10px;
     font-size: 17px;
@@ -53,9 +29,9 @@ body{
     float: left;
     width: 80%;
     background: #f1f1f1;
-  }
-  
-  button {
+}
+
+button {
     float: right;
     width: 20%;
     padding: 10px;
@@ -65,18 +41,29 @@ body{
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
-  }
+}
   
-  button:hover {
+button:hover {
     background: #0b7dda;
-  }
+}
   
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+/* --------------------------today's forecast--------------------------- */
+#today {
+    background-color: rgb(150, 56, 145);
+    width:200px;
+    border: solid black 1px;
+    border-radius: 10px;
+    margin-left:21%;
+    color: white;
+}
 
+#forecast {
+    background-color:rgb(138, 138, 248);
+    padding:40px;
+    margin-top:3%;
+    border: solid black 1px;
+    border-radius:10px;
+}
 
 .card {
     background-color: rgb(85, 243, 111);
@@ -88,6 +75,7 @@ body{
     text-align: center;
 }
 
+/* -------------------------5 day forecast-------------------------------- */
 #fiveDay {
     font-size: 40px;
     padding-top: 20px;
@@ -106,22 +94,11 @@ body{
     
 }
 
-#currentDay {
-    background-color: rgb(240, 240, 164);
-    font-size: 2em;
-    padding: 10px;
-    border-radius:10px;
-    border: solid black 1px;
-    
-    padding-right: 20px;
-}
-
 .img1 {
     width: 7em;
     height: 7em;
     margin-left:35%;
 }
-
 
 .col {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -136,17 +113,10 @@ body{
     margin-right: 0.60rem;
 }
 
-#today {
-    background-color: rgb(150, 56, 145);
-    width:200px;
-    border: solid black 1px;
-    border-radius: 10px;
-    margin-left:21%;
-    color: white;
-}
 
+/* ---------------------to dynamically change the screen size--------- */
 @media screen and (min-width: 480px) {
     body {
-      background-color: rgb(203, 228, 238);
+      background-color: rgb(213, 221, 224);
     }
   }
