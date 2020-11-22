@@ -29,6 +29,6 @@
   - clear search bar after search
   - set items to local storage
   
-  
+  https://github.com/carpegavin/Worlds-Best-Weather-App/blob/main/assets/img/Screenshot%202020-11-21%20213256.png?raw=true
   
   © copyright 2020 Gavin H Phill
