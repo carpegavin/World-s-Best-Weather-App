@@ -28,3 +28,7 @@
   - dynamic UV index color change
   - clear search bar after search
   - set items to local storage
+  
+  
+  
+  © copyright 2020 Gavin H Phill
