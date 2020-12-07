@@ -32,6 +32,6 @@
   - set items to local storage
   
   ![
-Worlds-Best-Weather-App](https://github.com/carpegavin/Worlds-Best-Weather-App/blob/main/assets/img/Screenshot%202020-11-21%20213256.png?raw=true?raw=true)
+Worlds-Best-Weather-App](https://github.com/carpegavin/Worlds-Best-Weather-App/blob/main/assets/img/weatherGIF.gif?raw=true)
   
   © copyright 2020 Gavin H Phill
